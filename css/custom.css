@@ -1,0 +1,60 @@
+.carousel-indicators li {
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    margin: 1px;
+    text-indent: 0;
+    cursor: pointer;
+    border: none;
+    border-radius: 100%;
+    background-color: #FFFFFF;
+    box-shadow: inset 1px 1px 1px 1px rgba(0,0,0,0.5);    
+    list-style: none;
+    //list-style-type: square;
+}
+
+.carousel-indicators .active {
+    width: 7px;
+    height: 7px;
+    margin: 1px;
+    background-color: #AAAAAA;
+}
+
+.carousel-control.left, .carousel-control.right {
+   background-image:none !important;
+   filter:none !important;
+}
+
+
+.social:hover {
+     -webkit-transform: scale(1.1);
+     -moz-transform: scale(1.1);
+     -o-transform: scale(1.1);
+ }
+ .social {
+     -webkit-transform: scale(0.8);
+     /* Browser Variations: */
+     
+     -moz-transform: scale(0.8);
+     -o-transform: scale(0.8);
+     -webkit-transition-duration: 0.5s;
+     -moz-transition-duration: 0.5s;
+     -o-transition-duration: 0.5s;
+ }
+
+/*
+    Multicoloured Hover Variations
+*/
+ 
+ #fa-facebook:hover {
+     color: #3B5998;
+ }
+ #fa-github:hover {
+     color: #6e5494;
+ }
+ #fa-linkedin:hover {
+     color: #0077b5;
+ }
+ #fa-envelope:hover {
+     color: #f39c12;
+ }

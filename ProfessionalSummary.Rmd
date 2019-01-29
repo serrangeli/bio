@@ -2,6 +2,7 @@
 output: 
  html_document:
   include:
+#     before_body: www/navbar.html
      after_body: www/footer.html
   fig_width: 12
   toc: false
@@ -35,6 +36,11 @@ $(document).ready(function() {
 ```{r setup, echo=FALSE, warning=FALSE, message=FALSE}
 library(htmltools)
 htmltools::tagList(rmarkdown::html_dependency_font_awesome())
+```
+
+```{r switches, echo=FALSE, warning=FALSE, message=FALSE}
+#resume_type = "INT"
+resume_type = "EXT"
 ```
 
 
@@ -80,8 +86,16 @@ for (i in 1:5) NPSS <- paste0(NPSS,skills)
 
 ```{r contact, echo=FALSE, warning=FALSE, message=FALSE}
 phone = paste0("phone: 513-284-9160")
-email = paste0("e-mail: carlo.serrangeli@ge.com")
-location = paste0("2630 Glendale-Milford Road","<br>","Brendamour Business Center","<br>","Evendale OH 45241 US")
+if (resume_type == "INT") {
+  phone = paste0("phone: 513-284-9160")
+  email = paste0("e-mail: carlo.serrangeli@ge.com")
+  location = paste0("1 Neumann Way,  MD CP1-4 - Evendale OH 45241 US")
+}
+if (resume_type == "EXT") {
+  phone = paste0("phone: 513-284-9160")
+  email = paste0("e-mail: carlo.serrangeli@gmail.com")
+  location = paste0("10782 Fallsington Ct."," - ","Blue Ash OH 45242 US")
+}
 ```
 
 <!-- ROW -->
@@ -96,9 +110,10 @@ library(grid)
 img <- readPNG("www/onePager.png")
 grid.raster(img)
 tags$h3("Carlo Serrangeli")
-tags$h4("Sr. Staff Analytics Engineer")
+tags$h4("Sr. Operation Leadership Manager")
 tags$h6(phone)
 tags$h6(email)
+tags$h6(location)
 tags$hr(size=2)
 ```
 </div>
@@ -171,9 +186,21 @@ tags$li("Numerical Propulsion Simulation System (NPSS)")
 ```{r echo=FALSE,message=FALSE,warning=FALSE}
 tags$h2("Experience")
 tags$div(id="scroll_experience", style="overflow-y:scroll; height:540px;",
+         tags$h4("Sr. Operation Leadership Manager"),
+         tags$h5("GE Aviation, West Chester (OH)"),
+         tags$h5("2018 - Present"),
+         tags$p(
+           tags$b("Digital Product: Analytics Core"),
+           tags$p("Product Owner"),
+           tags$li("Product Owner for GE Aviation Analytic Platform"),
+           tags$li("Define and Execute plan for GE Aviation analytics migration to cloud based platform."),
+           tags$li("Working with Internal stakeholders to  build growth playbook, presenting status and get buy in from senior leadership"),
+           tags$li("Defining system level requirement and driving execution by leading off shore based development team.")
+          ),
+         tags$hr(size=2),         
          tags$h4("Sr. Staff Analytics Engineer"),
-         tags$h5("GE Aviation Digital, Evendale"),
-         tags$h5("2013 - Present"),
+         tags$h5("GE Aviation Digital, Evendale (OH)"),
+         tags$h5("2013 - 2018"),
          tags$p(
            tags$b("Digital Product: Flight Phase Analyzer"),
            tags$br(),
@@ -191,7 +218,7 @@ tags$div(id="scroll_experience", style="overflow-y:scroll; height:540px;",
          ),
          tags$hr(size=2),
          tags$h4("Staff Engineer"),
-         tags$h5("GE Aviation, Evendale"),
+         tags$h5("GE Aviation, Evendale (OH)"),
          tags$h5("2011 - 2013"),
            tags$li("Lead GEnx-1B and GEnx-2B Engine Monitioring Unit post Entry into Service system level software design and qualification."),
          tags$hr(size=2),
@@ -212,6 +239,7 @@ tags$hr(size=2)
 </div>
 <!-- END EXPERIENCE -->
 <!-- AWARDS -->
+
 <div id = "Awards" class="col-sm-12">
 ```{r echo=FALSE,message=FALSE,warning=FALSE}
 tags$h2("Awards & Recognitions")
@@ -398,7 +426,6 @@ a(class="right carousel-control", href="#myrecognitions", role="button", "data-s
   )
 )
 )
-#tags$hr(size=2)
 ```
 </div>
 <!-- END AWARDS -->

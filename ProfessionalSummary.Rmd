@@ -140,12 +140,12 @@ tags$hr(size=2)
 <div id="Education" class="col-sm-12">
 ```{r echo=FALSE,message=FALSE,warning=FALSE}
 tags$h2("Education")
-tags$h4("University of Ferrara (Italy) | M.S. Electronic Engineering")
-tags$p("Specialization Exams:")
-tags$li("Engineering and Technology of Controls Systems")
-tags$li("Control Systems Design")
-tags$li("Classical/Modern Control System Theory")
-#tags$h4("University of Ferrara (Italy) | B.S. Electronic Engineering")
+tags$h4("Xavier University - Williams College of Business")
+tags$p("Master of Business Administration - MBA, Finance")
+tags$p("2019-2021")
+tags$h4("Università degli Studi di Ferrara")
+tags$p("Master of Science - MS, Electrical and Electronics Engineering")
+tags$p("1994-2000")
 tags$hr(size=2)
 ```
 </div>
